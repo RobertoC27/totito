@@ -1,0 +1,103 @@
+#test {
+  background: #333;
+  clear: both;
+  height: 300px;
+  position: relative;
+  width: 500px; }
+
+.display {
+  height: 100%; }
+
+.number {
+  color: white;
+  float: left;
+  font-size: 40px;
+  height: 100%;
+  line-height: 300px;
+  margin: 0 7px 0 7px;
+  text-align: center;
+  width: 100px; }
+
+.separation {
+  background: gray;
+  color: white;
+  float: left;
+  font-size: 52px;
+  height: 100%;
+  line-height: 290px;
+  text-align: center;
+  width: 44px; }
+
+#analog-clock {
+  background: white;
+  border-radius: 100%;
+  height: 250px;
+  margin: 0 30px 0 100px;
+  position: relative;
+  width: 250px; }
+
+.digit {
+  border-radius: 100%;
+  height: 250px;
+  position: absolute;
+  text-align: center;
+  width: 250px; }
+  .digit.d1 {
+    transform: rotate(30deg); }
+  .digit.d2 {
+    transform: rotate(60deg); }
+  .digit.d3 {
+    transform: rotate(90deg); }
+  .digit.d4 {
+    transform: rotate(120deg); }
+  .digit.d5 {
+    transform: rotate(150deg); }
+  .digit.d6 {
+    transform: rotate(180deg); }
+  .digit.d7 {
+    transform: rotate(210deg); }
+  .digit.d8 {
+    transform: rotate(240deg); }
+  .digit.d9 {
+    transform: rotate(270deg); }
+  .digit.d10 {
+    transform: rotate(300deg); }
+  .digit.d11 {
+    transform: rotate(330deg); }
+  .digit.d12 {
+    transform: rotate(360deg); }
+
+.show {
+  float: left;
+  height: 18px;
+  width: 50%; }
+  .show.hour {
+    background: brown; }
+  .show.minute {
+    background: orange;
+    height: 8px; }
+  .show.second {
+    background: green;
+    height: 8px; }
+
+.hourteller {
+  transform: rotate(180deg); }
+
+.minuteteller {
+  transform: rotate(230deg); }
+
+.secondteller {
+  transform: rotate(260deg); }
+
+.no-show {
+  float: right;
+  height: 18px;
+  width: 50%; }
+  .no-show.hour {
+    background: white; }
+  .no-show.minute {
+    background: white;
+    height: 8px; }
+  .no-show.second {
+    background: white;
+    height: 8px; }
