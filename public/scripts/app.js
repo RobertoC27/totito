@@ -1,147 +1,133 @@
-/*
-
-state = 0: digital
-state = 1: analog
-
-*/
-
-// Modelo / estado
-
-var state = 0;
-
-var hour1 = 2;
-var hour2 = 3;
-var minute1 = 5;
-var minute2 = 9;
-var seconds = 45;
-/*
-var secteller = document.getElementById("secondteller");
-var minteller = document.getElementById("minuteteller");
-var hourteller = document.getElementById("hourteller");
-*/
 
 
-var canvas=document.getElementById("test");
+var turno=1;
 
-var clockController= document.getElementById("selector");
+var canvas=document.getElementById("viewport");
 
-clockController.addEventListener("change", function() {
-    if (clockController.value=== "digital") {
-      state=0;
-    }else if(clockController.value === "analogo"){
-      state=1;
+var s1= document.getElementsByClassName("s1");
+var s2= document.getElementsByClassName("s2");
+var s3= document.getElementsByClassName("s3");
+var s4= document.getElementsByClassName("s4");
+var s5= document.getElementsByClassName("s5");
+var s6= document.getElementsByClassName("s6");
+var s7= document.getElementsByClassName("s7");
+var s8= document.getElementsByClassName("s8");
+var s9= document.getElementsByClassName("s9");
+var squares= document.getElementsByClassName("squares");
+
+s1[0].addEventListener("click",function() {
+
+	if (s1[0].innerHTML=== "") {
+    if (turno===1) {
+    	s1[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s1[0].innerHTML="O";
+    	turno=1;
     }
-    canvas.innerHTML = render2(state);
+  }
 });
 
-function render2(state){
-  var html = "";
-  if (state==0) {
-    html += '<div class="display">';
-    html += '<div class="number hour1">'+ hour1 +'</div>';
-    html += '<div class="number hour2">'+ hour2 +'</div>';
-    html += '<div class="separation">'+ seconds +'</div>';
-    html += '<div class="number minute1">'+ minute1 +'</div>';
-    html += '<div class="number minute2">'+ minute2 +'</div>';
-    html += '<div style="clear:both;"></div>';
-    html += '</div>';
+s2[0].addEventListener("click",function() {
 
-    //calcular el tiempo continuamente
-  seconds+=1;
-  if(seconds===60){
-    seconds=0;
-    minute2+=1;
-  }
-  if(minute2>9){
-    minute1+=1;
-    minute2=0;
-  }
-  if (minute1>5) {
-    hour2+=1;
-    minute1=0;
-    minute2=0;
-  }
-  if (hour1===2) {
-    if (hour2>3) {
-      hour2=0;
-      hour1=0;
-      minute2=0;
-      minute1=0;
+	if (s2[0].innerHTML=== "") {
+    if (turno===1) {
+    	s2[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s2[0].innerHTML="O";
+    	turno=1;
     }
   }
+});
 
+s3[0].addEventListener("click",function() {
+
+	if (s3[0].innerHTML=== "") {
+    if (turno===1) {
+    	s3[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s3[0].innerHTML="O";
+    	turno=1;
+    }
   }
-  else if (state===1) {
+});
 
-  	html += '<div id="analog-clock">';
+s4[0].addEventListener("click",function() {
 
-    html += '<div class="digit d1">1</div>';
-    html += '<div class="digit d2">2</div>';
-    html += '<div class="digit d3">3</div>';
-    html += '<div class="digit d4">4</div>';
-    html += '<div class="digit d5">5</div>';
-    html += '<div class="digit d6">6</div>';
-    html += '<div class="digit d7">7</div>';
-    html += '<div class="digit d8">8</div>';
-    html += '<div class="digit d9">9</div>';
-    html += '<div class="digit d10">10</div>';
-    html += '<div class="digit d11">11</div>';
-    html += '<div class="digit d12">12</div>';
-
-    html += '<div class="hourteller">';
-    html += '<div class="show hour"></div>';
-    html += '<div class="no-show hour"></div>';
-    html += '</div>';
-    
-
-
-    html += '<div class="minuteteller">';
-    html += '<div class="show minute"></div>';
-    html += '<div class="no-show minute"></div>';
-    html += '</div>';
-    
-
-    html += '<div class="secondteller">';
-    html += '<div class="show second"></div>';
-    html += '<div class="no-show second"></div>';
-    html += '</div>';
-    
-    html += '</div>';
-/*
-    secteller.style.transform='rotate('+ seconds* 6 +'deg)';
-    minteller.style.transform='rotate('+ (minute1 + minute2) * 6 +'deg)';
-    hourteller.style.transform='rotate('+ (hour1 + hour2) * 30 +'deg)';
-*/
-    //calcular el tiempo continuamente
-	  seconds+=1;
-	  if(seconds===60){
-	    seconds=0;
-	    minute2+=1;
-	  }
-	  if(minute2>9){
-	    minute1+=1;
-	    minute2=0;
-	  }
-	  if (minute1>5) {
-	    hour2+=1;
-	    minute1=0;
-	    minute2=0;
-	  }
-	  if (hour1===2) {
-	    if (hour2>3) {
-	      hour2=0;
-	      hour1=0;
-	      minute2=0;
-	      minute1=0;
-	    }
-	  }
-
+	if (s4[0].innerHTML=== "") {
+    if (turno===1) {
+    	s4[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s4[0].innerHTML="O";
+    	turno=1;
+    }
   }
-  return html; 
-}
+});
 
-function r(){
-  canvas.innerHTML=render2(state);
-}
-r();
-setInterval(r,1000);
+s5[0].addEventListener("click",function() {
+
+	if (s5[0].innerHTML=== "") {
+    if (turno===1) {
+    	s5[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s5[0].innerHTML="O";
+    	turno=1;
+    }
+  }
+});
+
+s6[0].addEventListener("click",function() {
+
+	if (s6[0].innerHTML=== "") {
+    if (turno===1) {
+    	s6[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s6[0].innerHTML="O";
+    	turno=1;
+    }
+  }
+});
+
+s7[0].addEventListener("click",function() {
+
+	if (s7[0].innerHTML=== "") {
+    if (turno===1) {
+    	s7[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s7[0].innerHTML="O";
+    	turno=1;
+    }
+  }
+});
+
+s8[0].addEventListener("click",function() {
+
+	if (s8[0].innerHTML=== "") {
+    if (turno===1) {
+    	s8[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s8[0].innerHTML="O";
+    	turno=1;
+    }
+  }
+});
+
+s9[0].addEventListener("click",function() {
+
+	if (s9[0].innerHTML=== "") {
+    if (turno===1) {
+    	s9[0].innerHTML="X";
+    	turno=2;
+    }else if (turno===2) {
+    	s9[0].innerHTML="O";
+    	turno=1;
+    }
+  }
+});

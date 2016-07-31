@@ -1,2 +1,2 @@
-# basic-javascript-clock
-Basic Javascript analog & digital clock
+# basic-javascript-tic-tac-toe
+Basic Javascript tic-tac-toe
