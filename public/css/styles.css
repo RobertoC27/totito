@@ -1,17 +1,24 @@
 #viewport {
-  width: 300px;
-  height: 300px; }
+  height: 400px;
+  margin: 5% 0 0 30%;
+  width: 400px; }
 
 .square {
-  width: 90px;
-  height: 90px;
-  background: #53917e;
-  float: left;
+  text-align: center;
+  background: #c9cba3;
   box-sizing: border-box;
+  color: #505168;
+  float: left;
+  font-size: 102px;
+  height: 120px;
+  line-height: 120px;
   margin: 0 0 2.5% 2.5%;
-  font-size: 85px;
-  line-height: 90px;
-  color: red; }
+  width: 120px; }
 
 #btn {
-  visibility: hidden; }
+  visibility: hidden;
+  margin: 0 0 3% 30%; }
+
+#ganador {
+  font-size: 52px;
+  margin-left: 30%; }

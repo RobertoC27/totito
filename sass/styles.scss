@@ -1,29 +1,36 @@
 
 
-$board-size:300px;
-$square-color:#53917e;
+$board-size:400px;
+$square-color:#c9cba3;
 $background-color:#b1b695;
+$mark-color:#505168;//#723d46;
 
 #viewport{
 	//background:$background-color;
-  width: $board-size;
   height: $board-size;
+  margin:5% 0 0 30%;
+  width: $board-size;
 
 }
 .square{
-  width: $board-size *0.3;
-  height: $board-size * 0.3;
+ 	text-align: center;
   background:$square-color;
-  float: left;
   box-sizing:border-box;
-  margin:  0 0 2.5% 2.5%;
-  font-size: 85px;
+  color: $mark-color;
+  float: left;
+  font-size:$board-size * 0.3 *0.85;
+  height: $board-size * 0.3;
   line-height: $board-size * 0.3;
-  color: red;
+  margin:  0 0 2.5% 2.5%;
+  width: $board-size *0.3;
 }
 
 #btn{
 	visibility:hidden;
+	margin:0 0 3% 30%;
 }
-
+#ganador{
+	font-size:$board-size * 0.13 ;
+	margin-left:30%;
+}
 
