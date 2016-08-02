@@ -121,7 +121,7 @@ function render(){
 	
 	//cuando esto pasa es que hay un empate
 	if (i === -1) {
-		win.innerHTML=("¡Empate!");
+		alert("¡Empate!");
 		init();
 	}
 }
