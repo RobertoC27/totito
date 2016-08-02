@@ -1,11 +1,11 @@
 
 
-$board-size:500px;
+$board-size:300px;
 $square-color:#53917e;
 $background-color:#b1b695;
 
 #viewport{
-	background:$background-color;
+	//background:$background-color;
   width: $board-size;
   height: $board-size;
 
@@ -17,11 +17,13 @@ $background-color:#b1b695;
   float: left;
   box-sizing:border-box;
   margin:  0 0 2.5% 2.5%;
-  font-size: 45px;
+  font-size: 85px;
   line-height: $board-size * 0.3;
   color: red;
 }
 
-
+#btn{
+	visibility:hidden;
+}
 
 

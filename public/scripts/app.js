@@ -3,131 +3,118 @@
 var turno=1;
 
 var canvas=document.getElementById("viewport");
+var bt=document.getElementById("btn");
+var squares= document.getElementsByClassName("square");
+var board=["","","","","","","","",""];
 
-var s1= document.getElementsByClassName("s1");
-var s2= document.getElementsByClassName("s2");
-var s3= document.getElementsByClassName("s3");
-var s4= document.getElementsByClassName("s4");
-var s5= document.getElementsByClassName("s5");
-var s6= document.getElementsByClassName("s6");
-var s7= document.getElementsByClassName("s7");
-var s8= document.getElementsByClassName("s8");
-var s9= document.getElementsByClassName("s9");
-var squares= document.getElementsByClassName("squares");
 
-s1[0].addEventListener("click",function() {
+function rev(element){
+	var mark="";
+	if (squares[element].innerHTML=== "") {
+	    if (turno===1) {
+	    	mark="X";
+	    	turno=2;
+	    }else if (turno===2) {
+	    	mark="O";
+	    	turno=1;
+	    }
+    squares[element].innerHTML=mark;
+    board[element]=mark;
+    render(element,mark);
+	}
+	
+}
 
-	if (s1[0].innerHTML=== "") {
-    if (turno===1) {
-    	s1[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s1[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
 
-s2[0].addEventListener("click",function() {
 
-	if (s2[0].innerHTML=== "") {
-    if (turno===1) {
-    	s2[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s2[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
+squares[0].addEventListener("click",function(){ rev(0);} );
+squares[1].addEventListener("click",function(){ rev(1);} );
+squares[2].addEventListener("click",function(){ rev(2);} );
+squares[3].addEventListener("click",function(){ rev(3);} );
+squares[4].addEventListener("click",function(){ rev(4);} );
+squares[5].addEventListener("click",function(){ rev(5);} );
+squares[6].addEventListener("click",function(){ rev(6);} );
+squares[7].addEventListener("click",function(){ rev(7);} );
+squares[8].addEventListener("click",function(){ rev(8);} );
 
-s3[0].addEventListener("click",function() {
 
-	if (s3[0].innerHTML=== "") {
-    if (turno===1) {
-    	s3[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s3[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
+function paint(e1,e2,e3){
+	squares[e1].style.color="green";
+	squares[e2].style.color="green";
+	squares[e3].style.color="green";
+	turno=3;
+	bt.style.visibility="visible";
+}
 
-s4[0].addEventListener("click",function() {
+function render(){
+	if (board[0] !== "") {
+		//revisar 1ra fila, diagonal, 1ra columna
+		if (board[1]===board[0]) {
+			if (board[2]===board[0]) {
+				paint(0,1,2);
+				return true;
+			}
+		}
+		if (board[4]===board[0]) {
+			if (board[8]===board[0]) {
+				paint(0,4,8);
+				return true;
+			}
+		}
+		if (board[3]===board[0]) {
+			if (board[6]===board[0]) {
+				paint(0,3,6);
+				return true;
+			}
+		}
 
-	if (s4[0].innerHTML=== "") {
-    if (turno===1) {
-    	s4[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s4[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
+	}
+//revisar 2da columna
+	if (board[1] !== "") {
+		if (board[4]===board[1]) {
+			if (board[7]===board[1]) {
+				paint(1,4,7);
+				return true;
+			}
+		}
 
-s5[0].addEventListener("click",function() {
+	}
+//revisar diagonal invertida y 3ra columna
+	if (board[2] !== "") {
+		if (board[4]===board[2]) {
+			if (board[6]===board[2]) {
+				paint(2,4,6);
+				return true;
+			}
+		}
+		if (board[5]===board[2]) {
+			if (board[8]===board[2]) {
+				paint(2,5,8);
+				return true;
+			}
+		}
+		
+	}
+//revisar 2da fila
+	if (board[3] !== "") {
+		if (board[4]===board[3]) {
+			if (board[5]===board[3]) {
+				paint(3,4,5);
+				return true;
+			}
+		}
+	}
+//revisar 3ra fila
+	if (board[6] !== "") {
+		if (board[7]===board[6]) {
+			if (board[8]===board[6]) {
+				paint(6,7,8);
+				return true;
+			}
+		}
+	}
 
-	if (s5[0].innerHTML=== "") {
-    if (turno===1) {
-    	s5[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s5[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
+	console.log(board);
+}
 
-s6[0].addEventListener("click",function() {
 
-	if (s6[0].innerHTML=== "") {
-    if (turno===1) {
-    	s6[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s6[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
-
-s7[0].addEventListener("click",function() {
-
-	if (s7[0].innerHTML=== "") {
-    if (turno===1) {
-    	s7[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s7[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
-
-s8[0].addEventListener("click",function() {
-
-	if (s8[0].innerHTML=== "") {
-    if (turno===1) {
-    	s8[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s8[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
-
-s9[0].addEventListener("click",function() {
-
-	if (s9[0].innerHTML=== "") {
-    if (turno===1) {
-    	s9[0].innerHTML="X";
-    	turno=2;
-    }else if (turno===2) {
-    	s9[0].innerHTML="O";
-    	turno=1;
-    }
-  }
-});
