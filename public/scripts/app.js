@@ -104,20 +104,17 @@ function render(){
 			}
 		}
 	}
-
+//revisar si hay empate
 	for (var i = squares.length - 1; i >= 0; i--) {
 		if (board[i]==="") {
 			break;
 		}
 	}
-	
-	//cuando esto pasa es que hay un empate
 	if (i === -1) {
 		alert("¡Empate!");
 		init();
 	}
 }
-
 
 function paint(e1,e2,e3){
 	squares[e1].style.color="green";
