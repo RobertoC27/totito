@@ -5,11 +5,11 @@ var turno=1;
 var canvas=document.getElementById("viewport");
 var bt=document.getElementById("btn");
 var win=document.getElementById("ganador");
-var squares= document.getElementsByClassName("square");
+var squares;
 var board=["","","","","","","","",""];
 var mark="";
 var cl;
-function rev(element){
+function listen(element){
 	
 	if (squares[element].innerHTML=== "") {
 	    if (turno===3) {
@@ -25,7 +25,7 @@ function rev(element){
 	    
     squares[element].innerHTML=mark;
     board[element]=mark;
-    render();
+    checkWinner();
 	}
 	
 }
@@ -35,26 +35,26 @@ function rev(element){
 bt.addEventListener("click",init);
 
 
-function render(){
+function checkWinner(){
 
 
 	if (board[0] !== "") {
 		//revisar 1ra fila, diagonal, 1ra columna
 		if (board[1]===board[0]) {
 			if (board[2]===board[0]) {
-				paint(0,1,2);
+				highlightWinner(0,1,2);
 				return true;
 			}
 		}
 		if (board[4]===board[0]) {
 			if (board[8]===board[0]) {
-				paint(0,4,8);
+				highlightWinner(0,4,8);
 				return true;
 			}
 		}
 		if (board[3]===board[0]) {
 			if (board[6]===board[0]) {
-				paint(0,3,6);
+				highlightWinner(0,3,6);
 				return true;
 			}
 		}
@@ -64,7 +64,7 @@ function render(){
 	if (board[1] !== "") {
 		if (board[4]===board[1]) {
 			if (board[7]===board[1]) {
-				paint(1,4,7);
+				highlightWinner(1,4,7);
 				return true;
 			}
 		}
@@ -74,13 +74,13 @@ function render(){
 	if (board[2] !== "") {
 		if (board[4]===board[2]) {
 			if (board[6]===board[2]) {
-				paint(2,4,6);
+				highlightWinner(2,4,6);
 				return true;
 			}
 		}
 		if (board[5]===board[2]) {
 			if (board[8]===board[2]) {
-				paint(2,5,8);
+				highlightWinner(2,5,8);
 				return true;
 			}
 		}
@@ -90,7 +90,7 @@ function render(){
 	if (board[3] !== "") {
 		if (board[4]===board[3]) {
 			if (board[5]===board[3]) {
-				paint(3,4,5);
+				highlightWinner(3,4,5);
 				return true;
 			}
 		}
@@ -99,7 +99,7 @@ function render(){
 	if (board[6] !== "") {
 		if (board[7]===board[6]) {
 			if (board[8]===board[6]) {
-				paint(6,7,8);
+				highlightWinner(6,7,8);
 				return true;
 			}
 		}
@@ -116,7 +116,7 @@ function render(){
 	}
 }
 
-function paint(e1,e2,e3){
+function highlightWinner(e1,e2,e3){
 	squares[e1].style.color="green";
 	squares[e2].style.color="green";
 	squares[e3].style.color="green";
@@ -145,15 +145,15 @@ function init(){
 	squares= document.getElementsByClassName("square");
 
 
-	squares[0].addEventListener("click",function(){ rev(0);} );
-	squares[1].addEventListener("click",function(){ rev(1);} );
-	squares[2].addEventListener("click",function(){ rev(2);} );
-	squares[3].addEventListener("click",function(){ rev(3);} );
-	squares[4].addEventListener("click",function(){ rev(4);} );
-	squares[5].addEventListener("click",function(){ rev(5);} );
-	squares[6].addEventListener("click",function(){ rev(6);} );
-	squares[7].addEventListener("click",function(){ rev(7);} );
-	squares[8].addEventListener("click",function(){ rev(8);} );
+	squares[0].addEventListener("click",function(){ listen(0);} );
+	squares[1].addEventListener("click",function(){ listen(1);} );
+	squares[2].addEventListener("click",function(){ listen(2);} );
+	squares[3].addEventListener("click",function(){ listen(3);} );
+	squares[4].addEventListener("click",function(){ listen(4);} );
+	squares[5].addEventListener("click",function(){ listen(5);} );
+	squares[6].addEventListener("click",function(){ listen(6);} );
+	squares[7].addEventListener("click",function(){ listen(7);} );
+	squares[8].addEventListener("click",function(){ listen(8);} );
 
 
 	for (var i = squares.length - 1; i >= 0; i--) {
